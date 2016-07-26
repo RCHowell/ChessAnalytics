@@ -19,15 +19,17 @@ Requirements
 - bash prompt (OSX and GNU Linux prompts by default)
 - node (v0.12 or Later, Current version is 6.3.1 fyi so you're probably good here)
 - mongodb node module installed
-    ```bash
-    # In the project directory...
-    npm install mongodb
-    ```
+
+```bash
+# In the project directory...
+npm install mongodb
+```
 - Don't forget to chmod the two shell scripts to be executable!
-    ```bash
-    sudo chmod +x ./scrape.sh
-    sudo chmod +x ./getPuzzles.sh
-    ```
+
+```bash
+sudo chmod +x ./scrape.sh
+sudo chmod +x ./getPuzzles.sh
+```
 
 Running It
 ```bash
