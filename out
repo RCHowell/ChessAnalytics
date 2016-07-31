@@ -1,0 +1,376 @@
+
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Training • lichess.org</title>
+    <link href='//fonts.googleapis.com/css?family=Noto+Sans:400,700|Roboto:300' rel='stylesheet' type='text/css'>
+    
+    <link href="//lichess1.org/assets/stylesheets/common.css?v=1014" type="text/css" rel="stylesheet"/>
+    <link href="//lichess1.org/assets/stylesheets/board.css?v=1014" type="text/css" rel="stylesheet"/>
+    
+    
+<link href="//lichess1.org/assets/stylesheets/training.css?v=1014" type="text/css" rel="stylesheet"/>
+<link href="//lichess1.org/assets/stylesheets/puzzle.css?v=1014" type="text/css" rel="stylesheet"/>
+
+
+    <link id="piece-sprite" href="//lichess1.org/assets/stylesheets/piece/cburnett.css?v=1014" type="text/css" rel="stylesheet"/>
+    <meta content="Tactic puzzle #5: Find the best move for black. Played by 327 players." name="description">
+    <link rel="shortcut icon" href="//lichess1.org/assets/images/favicon-32-white.png" type="image/x-icon" />
+    
+    <meta name="google" content="notranslate" />
+    <meta property="og:title" content="Chess tactic training 5 &bull; Black to play"/><meta property="og:description" content="Tactic puzzle #5: Find the best move for black. Played by 327 players."/><meta property="og:url" content="https://lichess.org/training/5"/><meta property="og:type" content="website"/><meta property="og:site_name" content="lichess.org"/><meta property="og:image" content="//lichess1.org/training/export/png/5.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Chess tactic training 5 &bull; Black to play"/><meta name="twitter:description" content="Tactic puzzle #5: Find the best move for black. Played by 327 players."/><meta name="twitter:site" content="@lichessorg"/><meta name="twitter:image" content="//lichess1.org/training/export/png/5.png"/>
+    
+    <link href="/blog.atom" type="application/atom+xml" rel="alternate" title="Latest blog posts" />
+    
+    <link rel="mask-icon" href="//lichess1.org/assets/favicon.svg" color="black">
+    
+    
+  </head>
+  <body class="preload base brown Woodi light Basic highlight destination   coords_2 "
+    
+    
+    data-user=""
+    data-piece-set="cburnett"
+    data-sound-set="silent"
+    data-bg="light"
+    data-asset-url="//lichess1.org"
+    data-asset-version="1014"
+    data-accept-languages="">
+    <form id="blind_mode" action="/toggle-blind-mode" method="POST">
+      <input type="hidden" name="enable" value="1" />
+      <input type="hidden" name="redirect" value="/training/5" />
+      <button type="submit">Accessibility: Enable blind mode</button>
+    </form>
+    <div id="site_description">Free online Chess server. Play Chess now in a clean interface. No registration, no ads, no plugin required. Play Chess with the computer, friends or random opponents.</div>
+    <div id="top" class="is2d">
+      
+
+<div id="topmenu" class="hover">
+  <section>
+    <a href="/">Play</a>
+    <div>
+      <a href="/?any#hook">Create a game</a>
+      <a href="/tournament">Tournament</a>
+      <a href="/simul">Simultaneous exhibitions</a>
+    </div>
+  </section>
+  <section>
+    <a href="/training">Learn</a>
+    <div>
+      <a href="/learn">Chess basics</a>
+      <a href="/training">Training</a>
+      <a href="/training/opening">Openings</a>
+      <a href="/training/coordinate">Coordinates</a>
+      <a href="/study">Study</a>
+    </div>
+  </section>
+  <section>
+    <a href="/tv">Watch</a>
+    <div>
+      <a href="/tv">Lichess TV</a>
+      <a href="/games">Current games</a>
+      <a href="/video">Video library</a>
+    </div>
+  </section>
+  <section>
+    <a href="/player">Community</a>
+    <div>
+      <a href="/player">Players</a>
+      <a href="/stat/rating/distribution/blitz">Rating stats</a>
+      
+      <a href="/team">Teams</a>
+      <a href="/forum">Forum</a>
+      
+      <a href="/qa">Questions & Answers</a>
+    </div>
+  </section>
+  <section>
+    <a href="/analysis">Tools</a>
+    <div>
+      <a href="/analysis">Analysis board</a>
+      <a href="/editor">Board editor</a>
+      <a href="/paste">Import game</a>
+      <a href="/games/search">Advanced search</a>
+    </div>
+  </section>
+</div>
+
+      <div id="ham-plate" class="fright link" data-hint="Menu" class="hint--bottom">
+        <div id="hamburger" data-icon="["></div>
+      </div>
+      <div class="lichess_language fright">
+        <a class="toggle link" href="#">English</a>
+        <form action="/translation/select" method="POST" class="language_links dropdown" data-url="//lichess1.org/assets/trans/refs.json?v=1014">
+          <ul>
+            <li><a href="/translation/contribute">Help translate Lichess!</a></li>
+          </ul>
+        </form>
+      </div>
+      
+      <a href="/login" class="signin button fright text">Sign in</a>
+      
+      
+      <div id="sound_control" class="fright">
+        <a id="sound_state" class="toggle link hint--bottom-left" data-hint="Sound">
+          <span class="is2 on" data-icon="#"></span>
+          <span class="is2 off" data-icon="$"></span>
+        </a>
+        <div class="dropdown">
+          <div class="slider"></div>
+          <form class="selector" action="/pref/soundSet">
+            
+            <div class="silent">
+              <input id="soundSet_silent"  checked class="active"  type="radio" value="silent" name="soundSet" />
+              <label for="soundSet_silent">Silent</label>
+            </div>
+            
+            <div class="standard">
+              <input id="soundSet_standard"  type="radio" value="standard" name="soundSet" />
+              <label for="soundSet_standard">Standard</label>
+            </div>
+            
+            <div class="piano">
+              <input id="soundSet_piano"  type="radio" value="piano" name="soundSet" />
+              <label for="soundSet_piano">Piano</label>
+            </div>
+            
+            <div class="nes">
+              <input id="soundSet_nes"  type="radio" value="nes" name="soundSet" />
+              <label for="soundSet_nes">NES</label>
+            </div>
+            
+            <div class="sfx">
+              <input id="soundSet_sfx"  type="radio" value="sfx" name="soundSet" />
+              <label for="soundSet_sfx">SFX</label>
+            </div>
+            
+            <div class="futuristic">
+              <input id="soundSet_futuristic"  type="radio" value="futuristic" name="soundSet" />
+              <label for="soundSet_futuristic">Futuristic</label>
+            </div>
+            
+            <div class="robot">
+              <input id="soundSet_robot"  type="radio" value="robot" name="soundSet" />
+              <label for="soundSet_robot">Robot</label>
+            </div>
+            
+            <div class="music">
+              <input id="soundSet_music"  type="radio" value="music" name="soundSet" />
+              <label for="soundSet_music">Music</label>
+            </div>
+            
+          </form>
+        </div>
+      </div>
+      
+      <div id="themepicker" class="fright">
+        <a id="themepicker_toggle" class="toggle icon link hint--bottom-left" data-hint="Theming" data-url="/themepicker">
+          &nbsp;<span data-icon="}"></span>&nbsp;
+        </a>
+      </div>
+      
+      
+      <a id="reconnecting" class="fright link" onclick="location.reload();" data-icon="B">&nbsp;Reconnecting</a>
+    </div>
+    <div id="fpmenu">
+
+<div class="inner">
+  <div class="body">
+    
+    <div class="anon">
+      <section class="login">
+        <h2>Sign in</h2>
+        <form action="/login" method="POST">
+          <input placeholder="User name or email" type="text" class="username" required="required" name="username" />
+          <input placeholder="Password" type="password" class="password" required="required" name="password" />
+          <input type="submit" class="submit" value="Sign in" />
+        </form>
+        <div class="forgot">
+          <a href="/password/reset">Forgot password?</a>
+        </div>
+      </section>
+      <section class="signup">
+        <h2>New to Lichess?</h2>
+        <a class="signup" href="/signup">Register</a>
+      </section>
+    </div>
+    
+    <div class="menu">
+      <section>
+        <h2>Play</h2>
+        <a href="/?any#hook">Create a game</a>
+        <a href="/tournament">Tournament</a>
+        <a href="/simul">Simultaneous exhibitions</a>
+        <a href="/tv">Lichess TV</a>
+        <a href="/games">Current games</a>
+      </section>
+      <section>
+        <h2>Learn</h2>
+        <a href="/training">Training</a>
+        <a href="/training/opening">Openings</a>
+        <a href="/training/coordinate">Coordinates</a>
+        
+        <a href="/video">Video library</a>
+      </section>
+      <section>
+        <h2>Community</h2>
+        <a href="/player">Players</a>
+        <a href="/stat/rating/distribution/blitz">Rating stats</a>
+        
+        <a href="/team">Teams</a>
+        <a href="/forum">Forum</a>
+        
+        <a href="/qa">Questions & Answers</a>
+      </section>
+      <section>
+        <h2>Tools</h2>
+        <a href="/editor">Board editor</a>
+        <a href="/analysis">Analysis board</a>
+        <a href="/paste">Import game</a>
+        <a href="/games/search">Advanced search</a>
+      </section>
+    </div>
+  </div>
+  <div class="footer">
+    
+    <a href="/mobile">Mobile App</a> ı
+    
+    <a href="/blog">Blog</a> ı
+    <a href="/network">World map</a> ı
+    
+    <a href="/developers">Webmasters</a> ı
+    <a href="/help/contribute">Contribute</a> ı
+    
+    <a href="/thanks">Thank you!</a><br />
+    
+    <a href="/donate">Donate</a> ı
+    
+    <a href="/contact">Contact</a> ı
+    <a href="/terms-of-service">Terms of Service</a> ı
+    <a href="/privacy">Privacy</a>
+    
+    ı <a href="https://github.com/ornicar/lila" target="_blank">Source Code</a>
+    
+  </div>
+</div>
+</div>
+    <div class="content is2d">
+      <div id="site_header">
+        <div id="notifications"></div>
+        <h1>
+          <a id="site_title" href="/">lichess<span class="extension">.org</span></a>
+        </h1>
+        
+        
+        
+        
+        
+      </div>
+      <div id="lichess">
+        
+
+<div class="round cg-512"><div class="cg-board-wrap"><div class="cg-board"></div></div></div>
+
+
+      </div>
+    </div>
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script><script>window.jQuery || document.write('<script src="//lichess1.org/assets/javascripts/vendor/jquery.min.js">\x3C/script>')</script>
+    
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script><script>window.moment || document.write('<script src="//lichess1.org/assets/vendor/moment/min/moment.min.js">\x3C/script>')</script>
+    
+    <script src="//lichess1.org/assets/compiled/lichess.js?v=1014"></script>
+    
+    
+<script src="//lichess1.org/assets/javascripts/vendor/sparkline.min.js?v=1014"></script>
+<script src="//lichess1.org/assets/compiled/lichess.puzzle.min.js?v=1014"></script>
+
+
+
+<script type="text/javascript">
+    var puzzleRoutes = {}; (function(_root){
+var _nS = function(c,f,b){var e=c.split(f||"."),g=b||_root,d,a;for(d=0,a=e.length;d<a;d++){g=g[e[d]]=g[e[d]]||{}}return g}
+var _qS = function(items){var qs = ''; for(var i=0;i<items.length;i++) {if(items[i]) qs += (qs ? '&' : '') + items[i]}; return qs ? ('?' + qs) : ''}
+var _s = function(p,s){return p+((s===true||(s&&s.secure))?'s':'')+':\/\/'}
+var _wA = function(r){return {ajax:function(c){c=c||{};c.url=r.url;c.type=r.method;return jQuery.ajax(c)}, method:r.method,type:r.method,url:r.url,absoluteURL: function(s){return _s('http',s)+'en.lichess.org'+r.url},webSocketURL: function(s){return _s('ws',s)+'en.lichess.org'+r.url}}}
+_nS('controllers.Puzzle'); _root.controllers.Puzzle.attempt = 
+        function(id) {
+          return _wA({method:"POST", url:"\/" + "training\/" + (function(k,v) {return v})("id", id) + "\/attempt"})
+        }
+      
+_nS('controllers.Puzzle'); _root.controllers.Puzzle.show = 
+        function(id) {
+          return _wA({method:"GET", url:"\/" + "training\/" + (function(k,v) {return v})("id", id)})
+        }
+      
+_nS('controllers.Puzzle'); _root.controllers.Puzzle.load = 
+        function(id) {
+          return _wA({method:"GET", url:"\/" + "training\/" + (function(k,v) {return v})("id", id) + "\/load"})
+        }
+      
+_nS('controllers.Puzzle'); _root.controllers.Puzzle.vote = 
+        function(id) {
+          return _wA({method:"POST", url:"\/" + "training\/" + (function(k,v) {return v})("id", id) + "\/vote"})
+        }
+      
+_nS('controllers.Editor'); _root.controllers.Editor.load = 
+        function(urlFen) {
+          return _wA({method:"GET", url:"\/" + "editor\/" + (function(k,v) {return v})("urlFen", urlFen)})
+        }
+      
+_nS('controllers.Round'); _root.controllers.Round.watcher = 
+        function(gameId,color) {
+        
+          if (color == "white") {
+            return _wA({method:"GET", url:"\/" + (function(k,v) {return v})("gameId", gameId)})
+          }
+        
+          if (true) {
+            return _wA({method:"GET", url:"\/" + (function(k,v) {return v})("gameId", gameId) + "\/" + (function(k,v) {return v})("color", color)})
+          }
+        
+        }
+      
+})(puzzleRoutes)
+    
+</script>
+
+<script>
+LichessPuzzle(
+document.querySelector('#lichess .round'),
+{"puzzle":{"id":5,"rating":1693,"attempts":327,"fen":"2r2b1r/p1p1k1p1/1pQp3p/1N2p1q1/3nP3/3P2P1/PPP2P1P/R3K1NR w KQ - 3 16","color":"black","initialMove":"c6d7","initialPly":33,"gameId":"07i4lmez","lines":{"e7d7":{"b5d4":{"e5d4":{"g1f3":{"g5a5":{"e1f1":"win"},"g5h5":"retry","g5f6":"retry","g5g4":"retry"}}}}},"enabled":false,"vote":-10000,"url":"https://lichess.org/training/5"},"pref":{"coords":2},"chessground":{"highlight":{"lastMove":true,"check":true},"movable":{"showDests":true},"draggable":{"showGhost":true},"premovable":{"showDests":true}},"animation":{"duration":250},"mode":"try","attempt":null,"win":null,"voted":null,"user":null,"difficulty":null},
+puzzleRoutes.controllers,
+{"training":"Training","yourPuzzleRatingX":"Your puzzle rating: %s","goodMove":"Good move","butYouCanDoBetter":"But you can do better.","bestMove":"Best move!","keepGoing":"Keep going…","puzzleFailed":"Puzzle failed","butYouCanKeepTrying":"But you can keep trying.","yourTurn":"Your turn","waiting":"Waiting","findTheBestMoveForBlack":"Find the best move for black.","findTheBestMoveForWhite":"Find the best move for white.","giveUp":"Give up","victory":"Victory!","puzzleSolvedInXSeconds":"Puzzle solved in %s seconds.","fromGameLink":"From game %s","boardEditor":"Board editor","continueFromHere":"Continue from here","playWithTheMachine":"Play with the machine","playWithAFriend":"Play with a friend","wasThisPuzzleAnyGood":"Was this puzzle any good?","pleaseVotePuzzle":"Help lichess improve by voting, using the up or down arrow:","thankYou":"Thank you!","puzzleId":"Puzzle %s","ratingX":"Rating: %s","playedXTimes":"Played %s times","continueTraining":"Continue training","retryThisPuzzle":"Retry this puzzle","toTrackYourProgress":"To track your progress:","signUp":"Register","trainingSignupExplanation":"Lichess will provide puzzles that match your ability, making for better training sessions.","thisPuzzleIsCorrect":"This puzzle is correct and interesting","thisPuzzleIsWrong":"This puzzle is wrong or boring","puzzles":"Puzzles","analysis":"Analysis board"}
+);
+</script>
+
+
+    
+    
+<script>
+if (/.+\.lichess\.org/.test(document.domain)) {
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-7935029-3', 'auto');
+ga('send', 'pageview');
+}
+</script>
+
+  </body>
+</html>
+
+
