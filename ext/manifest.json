@@ -1,0 +1,39 @@
+{
+  "manifest_version": 2,
+
+  "name": "Tactics Improved",
+  "description": "LiChess Tactics Enhancement",
+  "version": "1.0",
+  "author": "R. Conner Howell",
+
+  "background": {
+      "scripts": ["bower_components/jquery/dist/jquery.min.js", "scripts/background.js"],
+      "persistent": false
+  },
+
+  "browser_action": {
+      "default_icon": "images/icon_xxsmall.png",
+      "default_title": "Tactics Improved"
+  },
+
+  "content_scripts": [
+      {
+          "matches": ["https://*.lichess.org/training/*"],
+          "js": ["bower_components/jquery/dist/jquery.min.js", "scripts/index.js"],
+          "css": ["style.css"],
+          "run_at":"document_end"
+      }
+
+  ],
+
+ // resources that should be available when injecting stuff 
+ "web_accessible_resources": [
+     "index.html",
+     "images/*.png"
+  ],
+  
+  "permissions": [
+    "activeTab",
+    "http://localhost:5000/*"
+  ]
+}

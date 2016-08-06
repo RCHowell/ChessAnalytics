@@ -1,0 +1,95 @@
+#ti-sidebar {
+    display: block;
+    margin: 0 auto;
+    border-radius: 4px;
+    width: 250px;
+    height: 100%;
+    overflow: hidden;
+}
+
+#ti-sidebar.light {
+    border: 1px solid rgb(215,215,215);
+}
+
+#ti-sidebar.dark {
+    border: 1px solid rgb(61, 61, 61);
+}
+
+#ti-header {
+    height: 50px;
+}
+
+#ti-header.light {
+    background: #eee;
+    border-bottom: 1px solid rgb(215,215,215);
+}
+
+#ti-header.dark {
+    background: rgb(38, 38, 38);
+    border-bottom: 1px solid rgb(61, 61, 61);
+}
+
+#ti-header img {
+    float: left;
+    height: 30px;
+    margin: 10px;
+}
+
+#ti-header h1 {
+    font-size: 1.2em;
+    line-height: 50px;
+    text-align: center;
+}
+
+#ti-content li {
+    height: 60px;
+    padding: 0 40px;
+}
+
+#ti-content.light li{
+    border-bottom: 1px solid rgb(215,215,215);
+}
+
+#ti-content.dark li{
+    border-bottom: 1px solid rgb(61, 61, 61);
+}
+
+#ti-content li p {
+    font-size: 1.3em;
+    line-height: 60px;
+    padding: 0;
+    margin: 0;
+}
+
+#ti-content piece {
+    margin: 10px 10px 10px 0;
+    height: 40px;
+    width: 40px;
+    position: relative;
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+/* Override default LiChess styles */
+#ti-sidebar .table_wrap {
+    margin: 0 auto;
+}
+
+#ti-sidebar .table {
+    border: none;
+}
+
+#ti-sidebar .current_player {
+    display: none;
+}
+
+#ti-sidebar .findit {
+    display: none !important;
+}

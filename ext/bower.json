@@ -1,0 +1,23 @@
+{
+  "name": "Tactics Improved",
+  "homepage": "https://github.com/RCHowell/ChessAnalytics",
+  "authors": [
+    "R Conner Howell <howell50@purdue.edu>"
+  ],
+  "description": "Chrome extension to improve LiChess tactics training",
+  "main": "",
+  "keywords": [
+    "chess",
+    "lichess",
+    "tactics",
+    "training"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
