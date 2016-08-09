@@ -19,7 +19,10 @@
   "content_scripts": [
       {
           "matches": ["https://*.lichess.org/training/*"],
-          "js": ["bower_components/jquery/dist/jquery.min.js", "scripts/index.js"],
+          "js": [
+              "bower_components/jquery/dist/jquery.min.js",
+              "scripts/index.js"
+          ],
           "css": ["style.css"],
           "run_at":"document_end"
       }

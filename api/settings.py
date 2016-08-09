@@ -1,6 +1,7 @@
 MONGO_HOST = 'localhost'
 MONGO_PORT = 27017
 MONGO_DBNAME = 'chess'
+MONGO_QUERY_BLACKLIST = ['$where']
 X_DOMAINS = 'https://*.lichess.org/training/*'
 
 
