@@ -1,4 +1,5 @@
 'use strict';
+
 let pathName = window.location.pathname;
 
 // Entry point
@@ -13,19 +14,20 @@ function Main () {
         matchStyles();
         // Inject Images because images require exact extension url
         injectImages();
-        loadPuzzle();
+        getPuzzle(function(puzzle) {
+            populateSidebar(puzzle);
+        });
     });
 
     watchLocation(function() {
         pathName = window.location.pathname;
         adjustLichess();
-        loadPuzzle();
+        getPuzzle(function(puzzle) {
+            populateSidebar(puzzle);
+        });
     });
 }
 
-function loadPuzzle() {
-    populateSidebar(scrapePuzzle());
-}
 
 function appendSidebar (callback) {
     // Get exact url
@@ -107,8 +109,8 @@ function populateSidebar (puzzle) {
     // Colors array used so that I can toggle classes regardless of sidebar state
     $("#ti-content piece").addClass(colors[color].toLowerCase());
     $("#ti-content piece").removeClass(colors[(color + 1) % 2].toLowerCase());
-    $("#ti-url").val(puzzle.url);
-    $("#ti-puzzle").html("Puzzle <b>" + puzzle.id + "</b> played <b>" + puzzle.attempts + "</b> times");
+    $("#ti-url").val(puzzle.lichess_url);
+    $("#ti-puzzle").html("Puzzle <b>" + puzzle.lichess_id + "</b>");
 }
 
 function scrapePuzzle () {
@@ -134,5 +136,5 @@ function watchLocation (action) {
     setTimeout(function () {
         if (window.location.pathname != pathName) action();
         watchLocation(action);
-    }, 100);
+    }, 500);
 }

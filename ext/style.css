@@ -94,7 +94,8 @@
 #ti-range-wrapper input[type="number"] {
     float: left;
     height: 30px;
-    width: 72px;
+    width: 25%;
+    /*width: 72px;*/
     padding: 4px;
     border: none;
     margin: 4px 4px 8px 4px;
@@ -109,7 +110,8 @@
 
 #ti-range-set {
     float: left;
-    width: 50px;
+    width: 38px;
+    /*width: 50px;*/
     height: 38px;
     padding: 4px;
     border: none;
@@ -128,6 +130,9 @@
 
 /* Override default LiChess styles */
 
+.right .box {
+    display: none;
+}
 .please_vote {
     display: none;
 }

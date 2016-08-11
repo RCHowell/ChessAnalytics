@@ -20,6 +20,9 @@ schema = {
   },
   'color': {
     'type': 'string'
+  },
+  'lines': {
+    'type': 'dict'
   }
 }
 
