@@ -31,12 +31,15 @@ def generateGLJ(fen):
     for move in board.legal_moves:
         # Get square index because it is much more efficient to reference later for calculations
         orig = chess.SQUARE_NAMES.index(str(move)[:2])
-        dest = chess.SQUARE_NAMES.index(str(move)[2:])
-        if moves_indexes.has_key(orig):
-            moves_indexes[orig].append(dest)
-        else:
-            # If key doesn't exist, then add it with 
-            moves_indexes.update({ orig: [dest]})
+        try:
+            dest = chess.SQUARE_NAMES.index(str(move)[2:4])
+            if moves_indexes.has_key(orig):
+                moves_indexes[orig].append(dest)
+            else:
+                # If key doesn't exist, then add it with 
+                moves_indexes.update({ orig: [dest]})
+        except ValueError:
+            pass
 
 
     moves_weights = {}
