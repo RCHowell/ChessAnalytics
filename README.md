@@ -56,7 +56,7 @@ Inserted:  5
 Done Inserting to database
 ```
 
-## Part 2: Chrome Extension and Backend
+## Part 2: Backend and Chrome Extension
 Files for this step can be found in the api and ext directory
 
 #### Backend
@@ -74,3 +74,35 @@ The extension adds more information about the current puzzle
 
 ## Part 3: Puzzle Similarity
 Files for this can be found in the position_analysis directory
+
+#### Puzzles are textually encoded to later be tested for similarity.
+
+`genGLJ.py` generates a GLJ feature vector of the puzzle. GLJ = Ganguly, Leveling, and Jones
+
+My encoding of the puzzles is based off of the paper "Retrievel of Similar Chess Positions" by Ganguly, Leveling, and Jones. [link](https://drive.google.com/file/d/0BxMT6ybDt4RoX2JsbDdRaUx4T1k/view?usp=sharing)
+
+#### Description of the Encoding:
+1st: Piece Locations In Algebraic Notation
+```
+# White Knight at c3 and a Black Bishop at g7
+Nc3 bg7
+```
+
+2nd: Possible Moves and [Chebyshev Distance](https://en.wikipedia.org/wiki/Chebyshev_distance) with weighting
+
+Distance weighting is equation (2) in the above paper.
+```
+# Black Queen Can Move to a6 with a Distance Weight of 0.89
+qa6|0.89
+```
+
+3rd: Attacking and Defending Squares
+```
+# Black Bishop Attacking the White Knight on c3
+b>Nc3
+# White Pawn Defending the White Knight on c3
+p<Nc3
+```
+
+#### Determining Similarity
+1st: I split the GLJ fields into parts containing three characters.
