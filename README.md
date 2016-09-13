@@ -1,22 +1,22 @@
 # Chess Analytics
 
-## Step 1: Scraping problems and inserting to Mongo
+## Part 1: Scraping problems and inserting to Mongo
 In the repo you'll find three scripts
 - getPuzzles.sh
 - scrape.sh
 - puzzlesToDb.js
 
-`getPuzzles.sh` will run the latter two together for convenience
+`getPuzzles.sh` Runs the latter two together for convenience
 
-`scrape.sh` scrapes lichess.com for chess puzzles
+`scrape.sh` Scrapes puzzles from lichess.com
 
-`puzzlesToDb.js` inserts them all to a Mongo database with URL `mongodb://localhost:27017/chess`
+`puzzlesToDb.js` Inserts all scraped puzzles to a Mongo database with URL `mongodb://localhost:27017/chess`
 
 All scripts are thoroughly commented and should be very readable.
 
 #### Running them yourself
 Requirements
-- bash prompt (OSX and GNU Linux prompts by default)
+- bash
 - node (v0.12 or Later, Current version is 6.3.1 fyi so you're probably good here)
 - mongodb node module installed
 
@@ -31,7 +31,7 @@ sudo chmod +x ./scrape.sh
 sudo chmod +x ./getPuzzles.sh
 ```
 
-Running It
+Run It
 ```bash
 # Assuming all requirements are met
 ./getPuzzles.sh
@@ -55,3 +55,22 @@ Inserted:  4
 Inserted:  5
 Done Inserting to database
 ```
+
+## Part 2: Chrome Extension and Backend
+Files for this step can be found in the api and ext directory
+
+#### Backend
+The backend is an [Eve](http://python-eve.org/) server. It allows the extension to connect to my scraped puzzle database.
+There are two files in the api directory
+- `settings.py` Eve server settings which contain the puzzle schema and which fields puzzles can be queried by
+- `run.py` Short script to include and run the server (settings.py)
+
+#### Extension
+The extension adds more information about the current puzzle
+##### Without extension
+![Before](images/without.png "Without Extension")
+##### With Extension
+![After](images/with.png "With Extension")
+
+## Part 3: Puzzle Similarity
+Files for this can be found in the position_analysis directory
